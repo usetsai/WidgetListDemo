@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--添加快捷方式需要的权限  -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WidgetList"
+        tools:targetApi="31">
+        <!--<activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.WidgetListDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name=".WidgetListActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.WidgetList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.pinappwidget.PinWidgetMainActivity"
+            android:exported="true"
+            android:label="Pin Widget Main screen"
+            android:theme="@style/Theme.WidgetList" />
+
+        <activity
+            android:name=".widget.pinappwidget.PinWidgetConfigurationActivity"
+            android:exported="true"
+            android:label="Pin Widget Configuration screen"
+            android:theme="@style/Theme.WidgetList">
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".widget.pinappwidget.PinWidgetProvider"
+            android:exported="true"
+            android:label="Pin Widget 2x2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/pin_widget_info" />
+        </receiver>
+
+        <receiver android:name=".widget.pinshortcut.ShortcutPinnedCallbackReceiver"/>
+
+        <receiver
+            android:name=".widget.glancewidget.NameWidgetReceiver"
+            android:enabled="@bool/glance_appwidget_available"
+            android:exported="false"
+            android:label="Name Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_app_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.glancewidget.NumWidgetReceiver"
+            android:enabled="@bool/glance_appwidget_available"
+            android:exported="false"
+            android:label="Num Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_app_widget_info" />
+        </receiver>
+
+        <activity android:name=".widget.pinshortcut.AddShortcutActivity" android:label="AddShortcutActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:exported="true"
+            android:name=".widget.flipperwidget.AdapterViewFlipperWidgetProvider"
+            android:label="AdapterViewFlipperWidgetProvider" >
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_view_flipper_info" />
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".widget.flipperwidget.AdapterViewFlipperWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver android:name=".widget.stackwidget.StackWidgetProvider" android:label="Widget Stack"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_stack_info" />
+        </receiver>
+
+        <receiver android:name=".widget.stackwidget.ListWidgetProvider" android:label="Widget List"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_list_info" />
+        </receiver>
+
+        <service android:name=".widget.stackwidget.StackWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider1x1"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_1x1" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider2x1"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_2x1" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider2x2"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_2x2" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider3x2"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_3x2" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider4x2"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x2" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider4x4"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x4" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.simplewidget.WidgetProvider5x2"
+            android:exported="true"
+            android:label="Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_5x2" />
+        </receiver>
+
+        <activity
+            android:name=".widget.simplewidget.SimpleWidgetConfigurationActivity"
+            android:exported="true"
+            android:label="Simple Widget Configuration screen"
+            android:theme="@style/Theme.WidgetList">
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:label="Widget Blur Layout"
+            android:name=".widget.blurwidget.WidgetBlurLayoutTest4x2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_blur_layout_4x2"/>
+            <meta-data
+                android:name="flyme.widget.config"
+                android:value="blurBg" />
+        </receiver>
+
+        <receiver android:label="Widget Blur Layout"
+            android:name=".widget.blurwidget.WidgetBlurLayout2x2"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_blur_layout_2x2"/>
+            <meta-data
+                android:name="flyme.widget.config"
+                android:value="blurBg" />
+        </receiver>
+    </application>
+</manifest>
