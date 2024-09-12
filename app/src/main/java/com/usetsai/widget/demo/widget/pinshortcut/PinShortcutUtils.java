@@ -18,7 +18,8 @@ public class PinShortcutUtils {
 
             Intent actionIntent = new Intent(Intent.ACTION_MAIN);
             actionIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-            actionIntent.setClassName(activity.getPackageName(), activity.getClass().getName());
+            //actionIntent.setClassName(activity.getPackageName(), activity.getClass().getName());
+            actionIntent.setPackage(activity.getPackageName());
             actionIntent.putExtra("duplicate", false);
 
             ShortcutInfo shortcutInfo = new ShortcutInfo.Builder(activity, "test_shortcut_id")

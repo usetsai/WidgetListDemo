@@ -81,6 +81,9 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/default_app_widget_info" />
+            <meta-data
+                android:name="flyme.widget.config"
+                android:value="previewNoPadding" />
         </receiver>
 
         <receiver
@@ -269,7 +272,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_blur_layout_2x2"/>
             <meta-data
                 android:name="flyme.widget.config"
-                android:value="blurBg" />
+                android:value="blurBg|previewNoPadding" />
         </receiver>
     </application>
 </manifest>

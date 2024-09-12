@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Widget List Demo"
 include(":app")
 include(":glancewidget")
+include(":widgetsize")

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WidgetListDemo">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.WidgetListDemo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".WidgetProvider1x1"
+            android:exported="true"
+            android:label="Widget span 1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_1x1" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider1x2"
+            android:exported="true"
+            android:label="Widget span 1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_1x2" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider1x3"
+            android:exported="true"
+            android:label="Widget span 1">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_1x3" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider2x1"
+            android:exported="true"
+            android:label="Widget span 2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_2x1" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider2x2"
+            android:exported="true"
+            android:label="Widget span 2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_2x2" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider2x3"
+            android:exported="true"
+            android:label="Widget span 2">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_2x3" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider3x1"
+            android:exported="true"
+            android:label="Widget span 3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_3x1" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider3x2"
+            android:exported="true"
+            android:label="Widget span 3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_3x2" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider3x3"
+            android:exported="true"
+            android:label="Widget span 3">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_3x3" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider4x1"
+            android:exported="true"
+            android:label="Widget span 4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x1" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider4x2"
+            android:exported="true"
+            android:label="Widget span 4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x2" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider4x3"
+            android:exported="true"
+            android:label="Widget span 4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x3" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider4x4"
+            android:exported="true"
+            android:label="Widget span 4">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_4x4" />
+        </receiver>
+
+        <receiver
+            android:name=".WidgetProvider5x2"
+            android:exported="true"
+            android:label="Widget span 5">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/default_widget_info_5x2" />
+        </receiver>
+    </application>
+
+</manifest>

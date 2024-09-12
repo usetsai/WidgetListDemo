@@ -11,6 +11,9 @@
       <entry key="glancewidget">
         <State />
       </entry>
+      <entry key="widgetsize">
+        <State />
+      </entry>
     </value>
   </component>
 </project>
