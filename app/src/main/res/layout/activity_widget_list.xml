@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" android:fitsSystemWindows="true">
 
     <Button
         android:id="@+id/pin_widget"
@@ -40,5 +40,31 @@
         app:layout_constraintTop_toBottomOf="@+id/update_name_widget"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/update_widget_preview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插件预览样式1"
+        app:layout_constraintTop_toBottomOf="@+id/add_shortcut"
+        app:layout_constraintEnd_toStartOf="@+id/update_widget_preview2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/update_widget_preview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="插件预览样式2"
+        app:layout_constraintTop_toTopOf="@+id/update_widget_preview1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/update_widget_preview1" />
+
+    <Button
+        android:id="@+id/reset_widget_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置插件预览样式"
+        app:layout_constraintTop_toBottomOf="@+id/update_widget_preview1"
+        app:layout_constraintStart_toStartOf="@+id/update_widget_preview1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -274,5 +274,14 @@
                 android:name="flyme.widget.config"
                 android:value="blurBg|previewNoPadding" />
         </receiver>
+
+        <receiver android:label="Change Widget Preview"
+            android:name=".widget.simplewidget.ChangeWidgetPreviewProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/default_widget_info_2x2"/>
+        </receiver>
     </application>
 </manifest>
